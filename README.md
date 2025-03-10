@@ -1,4 +1,3 @@
-
 # MedicalAnalysisApp
 
 ## Étape 1 : Analyse exploratoire et visualisation
@@ -7,5 +6,3 @@
 - **Fonctionnalités** :
   - Statistiques descriptives (moyenne, écart-type, etc.).
   - Histogrammes et matrices de corrélation.
-  - Réduction de dimension avec PCA.
-- **Exemple** : `python test_step1.py`

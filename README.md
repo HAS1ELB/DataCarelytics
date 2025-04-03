@@ -1,7 +1,7 @@
 
-# MedicalAnalysisApp
+# DataCarelytics
 
-**MedicalAnalysisApp** est une application interactive développée avec Streamlit pour analyser et visualiser des données médicales de différents types. Elle offre des outils d'exploration, de traitement, et de prédiction adaptés aux données tabulaires, textuelles, d'images, et de séries temporelles biomédicales. Conçue pour les professionnels de santé, chercheurs, et data scientists, cette application vise à faciliter l'analyse des données médicales dans un environnement convivial.
+**DataCarelytics** est une application interactive développée avec Streamlit pour analyser et visualiser des données médicales de différents types. Elle offre des outils d'exploration, de traitement, et de prédiction adaptés aux données tabulaires, textuelles, d'images, et de séries temporelles biomédicales. Conçue pour les professionnels de santé, chercheurs, et data scientists, cette application vise à faciliter l'analyse des données médicales dans un environnement convivial.
 
 ---
 
@@ -92,7 +92,7 @@ statsmodels
 1. Clonez le dépôt :
 
 ```bash
-git clone https://github.com/has1elb/MedicalAnalysisApp.git
+git clone https://github.com/has1elb/DataCarelytics.git
 cd MedicalAnalysisApp
 ```
 

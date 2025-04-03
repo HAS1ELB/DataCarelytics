@@ -3,7 +3,11 @@ pandas
 numpy
 plotly
 scikit-learn
+pillow
 opencv-python
 pydicom
-Pillow
 matplotlib
+spacy
+nltk>=3.8.1
+wordcloud
+statsmodels

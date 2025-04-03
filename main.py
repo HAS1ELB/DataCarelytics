@@ -2,12 +2,12 @@ import streamlit as st
 from config import setup_page_config
 from exploratory_analysis import exploratory_analysis
 from image_analysis import medical_image_analysis
+from analyse_texte_nlp import medical_text_nlp_analysis
+from analyse_serie_temporelle import biomedical_time_series_analysis
+from analyse_predictive import medical_predictive_models
 
 def main():
-    # Apply page configuration from config.py
     setup_page_config()
-
-    # Sidebar navigation
     st.sidebar.title("🧪 Menu")
     analysis_type = st.sidebar.radio(
         "Choisir un type d’analyse",
@@ -20,20 +20,16 @@ def main():
         ]
     )
 
-    # Route to the appropriate analysis function
     if analysis_type == "Analyse exploratoire et visualisation":
         exploratory_analysis()
     elif analysis_type == "Modèles de prédiction médicale":
-        st.title("🩺 Modèles de Prédiction Médicale")
-        st.write("Section en développement : Régression logistique, SVM, Random Forest, etc.")
+        medical_predictive_models()
     elif analysis_type == "Analyse d’images médicales":
         medical_image_analysis()
     elif analysis_type == "Analyse de texte médical et NLP":
-        st.title("📄 Analyse de Texte Médical et NLP")
-        st.write("Section en développement : BERT, NER, Chatbots, etc.")
+        medical_text_nlp_analysis()
     elif analysis_type == "Analyse de séries temporelles biomédicales":
-        st.title("📈 Analyse de Séries Temporelles Biomédicales")
-        st.write("Section en développement : LSTM, DTW, Fourier, etc.")
+        biomedical_time_series_analysis()
 
 if __name__ == "__main__":
     main()

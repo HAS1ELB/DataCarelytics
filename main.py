@@ -3,7 +3,7 @@ from tabular_data.config import set_page_config, load_css
 from tabular_data.data_processing import handle_tabular_data_analysis
 from tabular_data.utils import display_home_page
 from tabular_data.ml_models import handle_machine_learning
-from medical_chatbot.app import chatbot
+from medical_chatbot.app import main
 
 # Configure page
 set_page_config()
@@ -89,4 +89,4 @@ elif app_mode == "Text Analysis":
     st.info("Text Analysis module coming soon!")
 elif app_mode == "Deep Learning":
     st.markdown("<h2 class='sub-header'>Chatbot</h2>", unsafe_allow_html=True)
-    chatbot()
+    main()

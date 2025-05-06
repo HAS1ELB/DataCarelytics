@@ -5,7 +5,7 @@ import io
 import os
 from medical_chatbot.utils import process_image_query
 
-def chatbot():
+def main():
     # Configuration de la page Streamlit
     '''st.set_page_config(
         page_title="AI-DOCTOR - Medical Chatbot",
@@ -69,3 +69,6 @@ def chatbot():
                 st.error("Please upload an image")
             if not query:
                 st.error("Please enter a question")
+                
+if __name__ == "__main__":
+       main()

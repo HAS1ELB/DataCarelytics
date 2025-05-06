@@ -1,0 +1,77 @@
+/* Style personnalisé pour l'application Streamlit */
+
+/* Header styling */
+.header {
+    padding: 1rem 0;
+    text-align: center;
+    background: linear-gradient(135deg, #6e48aa, #9d50bb);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+/* File uploader customization */
+.stFileUploader {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px dashed #9d50bb;
+    background-color: rgba(158, 80, 187, 0.1);
+}
+
+/* Button styling */
+.stButton button {
+    width: 100%;
+    font-weight: bold;
+    padding: 0.75rem 0;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+/* Text area styling */
+.stTextArea textarea {
+    border-radius: 10px;
+    border: 1px solid #6e48aa;
+    background-color: rgba(110, 72, 170, 0.05);
+}
+
+/* Make the content area more readable */
+.stMarkdown {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* Improved error messages */
+.stAlert {
+    border-radius: 10px;
+}
+
+/* Results section styling */
+.results-container {
+    border: 1px solid rgba(110, 72, 170, 0.3);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Medical emphasis styling */
+.medical-term {
+    color: #4a90e2;
+    font-weight: 500;
+}
+
+.diagnosis {
+    color: #e24a4a;
+    font-weight: 500;
+}

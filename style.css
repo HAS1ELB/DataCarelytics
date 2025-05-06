@@ -1,0 +1,215 @@
+/* DataCare Advanced Custom CSS */
+
+:root {
+  /* Couleurs principales */
+  --primary-color: #2e7dff;
+  --secondary-color: #0f3dab;
+  --accent-color: #3fbaff;
+  
+  /* Couleurs de fond */
+  --background-color: #ffffff;  /* Fond plus clair pour une meilleure visibilité */
+  --card-background: #ffffff;
+  
+  /* Couleurs de texte */
+  --text-color: #1a2a4e;
+  --light-text: #5c6a8c;
+  
+  /* Couleurs d'état */
+  --success-color: #28c76f;
+  --warning-color: #ff9f43;
+  --danger-color: #ea5455;
+  --info-color: #00cfe8;
+  
+  /* Style des éléments */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --font-primary: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --transition-speed: 0.3s;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.stApp {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-primary);
+}
+
+/* Main container */
+.main {
+  padding: 2rem;
+}
+
+/* Header styling */
+.stHeader {
+  background-color: var(--card-background);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+
+/* Sidebar */
+.css-1d391kg, .css-1wbqy5n {  /* Classes pour la sidebar en Streamlit */
+  background-color: var(--card-background);
+  border-right: 1px solid #e9ecef;
+}
+
+/* Widgets */
+.stButton button {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  font-weight: 500;
+}
+
+.stButton button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stSelectbox select, .stMultiSelect select {
+  border-radius: var(--border-radius);
+  border: 1px solid #e9ecef;
+  padding: 0.5rem;
+}
+
+/* Amélioration de la visibilité des graphiques */
+.stPlot {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1.5rem;
+}
+
+/* Pour les tableaux de données */
+.dataframe {
+  font-size: 0.9rem;
+}
+
+.dataframe th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.dataframe td, .dataframe th {
+  padding: 0.5rem !important;
+  border: 1px solid #e9ecef !important;
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Texte et typographie */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 0.8rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p, li, .stText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Spacers et dividers */
+hr {
+  margin: 2rem 0;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+/* Amélioration des liens */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Containers et colonnes */
+.stColumns > div {
+  padding: 0.5rem;
+}
+
+/* Amélioration de la mise en page des expanders */
+.stExpander {
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.stExpander > div:first-child {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  padding: 0.75rem;
+}
+
+.stExpander > div:nth-child(2) {
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  padding: 1rem;
+}
+
+/* Styles pour les graphiques Plotly */
+.plotly-graph-div {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Contrastes améliorés pour les tableaux et métriques */
+.stMetric {
+  background-color: var(--card-background);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border-left: 5px solid var(--primary-color);
+}
+
+/* Ajustement pour écrans mobiles */
+@media screen and (max-width: 768px) {
+  .main {
+      padding: 1rem;
+  }
+  
+  .stColumns > div {
+      width: 100% !important;
+      margin-bottom: 1rem;
+  }
+}

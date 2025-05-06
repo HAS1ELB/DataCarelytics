@@ -9,7 +9,7 @@ from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
 
-DB_FAISS_PATH = "vectorstore/db_faiss"
+DB_FAISS_PATH = "medical_chatbot2/vectorstore/db_faiss"
 
 @st.cache_resource
 def get_vectorstore():

@@ -3,7 +3,8 @@ from tabular_data.config import set_page_config, load_css
 from tabular_data.data_processing import handle_tabular_data_analysis
 from tabular_data.utils import display_home_page
 from tabular_data.ml_models import handle_machine_learning
-from medical_chatbot.app import main
+from medical_chatbot.app import main as image_chatbot_main
+from medical_chatbot2.main import main as text_chatbot_main
 
 # Configure page
 set_page_config()
@@ -44,7 +45,6 @@ st.markdown("<p class='app-subtitle'>A Comprehensive Medical Data Science Platfo
 try:
     from streamlit_option_menu import option_menu
     with st.sidebar:
-        #st.image("https://img.icons8.com/fluency/96/000000/hospital-3.png", width=80)
         selected = option_menu(
             "Navigation",
             ["Home", "Tabular Data Analysis", "Image Processing", "Text Analysis", "Chatbot"],
@@ -87,6 +87,22 @@ elif app_mode == "Image Processing":
 elif app_mode == "Text Analysis":
     st.markdown("<h2 class='sub-header'>Text Analysis</h2>", unsafe_allow_html=True)
     st.info("Text Analysis module coming soon!")
-elif app_mode == "Deep Learning":
-    st.markdown("<h2 class='sub-header'>Chatbot</h2>", unsafe_allow_html=True)
-    main()
+elif app_mode == "Chatbot":
+    st.markdown("<h2 class='sub-header'>Medical Chatbots</h2>", unsafe_allow_html=True)
+    
+    # Sub-selection for chatbot type
+    chatbot_type = st.selectbox(
+        "Choose Chatbot Type",
+        ["Image-based Chatbot", "Text-based RAG Chatbot"]
+    )
+    
+    if chatbot_type == "Image-based Chatbot":
+        # Load specific CSS for image chatbot
+        try:
+            load_css("medical_chatbot/assets/style.css")
+        except:
+            st.warning("Could not load image chatbot CSS, using default styles.")
+        
+        image_chatbot_main()
+    else:  # Text-based RAG Chatbot
+        text_chatbot_main()

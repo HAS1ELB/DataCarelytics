@@ -7,7 +7,7 @@
   --accent-color: #3fbaff;
   
   /* Couleurs de fond */
-  --background-color: #ffffff;  /* Fond plus clair pour une meilleure visibilité */
+  --background-color: #ffffff;
   --card-background: #ffffff;
   
   /* Couleurs de texte */
@@ -56,7 +56,7 @@ body {
 }
 
 /* Sidebar */
-.css-1d391kg, .css-1wbqy5n {  /* Classes pour la sidebar en Streamlit */
+.css-1d391kg, .css-1wbqy5n {
   background-color: var(--card-background);
   border-right: 1px solid #e9ecef;
 }
@@ -81,6 +81,24 @@ body {
   border-radius: var(--border-radius);
   border: 1px solid #e9ecef;
   padding: 0.5rem;
+}
+
+/* File uploader customization */
+.stFileUploader {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--primary-color);
+  background-color: rgba(46, 125, 255, 0.1);
+}
+
+/* Results container for medical report analysis */
+.results-container {
+  border: 1px solid rgba(40, 199, 111, 0.3);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Amélioration de la visibilité des graphiques */

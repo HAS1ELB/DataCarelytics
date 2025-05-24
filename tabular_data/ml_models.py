@@ -15,6 +15,8 @@ import xgboost as xgb
 import lightgbm as lgb
 from catboost import CatBoostClassifier, CatBoostRegressor
 import shap
+import joblib
+from io import BytesIO
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -64,7 +66,7 @@ def handle_machine_learning():
         horizontal=True
     )
     
-    ml_tabs = st.tabs(["🔄 Model Setup", "🔬 Training & Evaluation", "📊 Interpretability", "🧪 Cross-Validation", "📈 Model Comparison"])
+    ml_tabs = st.tabs(["🔄 Model Setup", "🔬 Training & Evaluation", "📊 Interpretability", "🧪 Cross-Validation", "📈 Model Comparison", "💾 Export Models"])
     
     with ml_tabs[0]:
         st.subheader("Model Configuration")
@@ -632,3 +634,75 @@ def handle_machine_learning():
             st.plotly_chart(fig, use_container_width=True)
     
     st.markdown("</div>", unsafe_allow_html=True)
+    
+    
+    # Ajouter après la section "with ml_tabs[4]:"
+    with ml_tabs[5]:
+        st.subheader("Exporter les modèles entraînés")
+        
+        if 'ml_results' not in st.session_state:
+            st.info("Veuillez d'abord entraîner des modèles dans l'onglet 'Training & Evaluation'.")
+            return
+        
+        results = st.session_state['ml_results']
+        
+        st.write("Sélectionnez les modèles que vous souhaitez télécharger:")
+        
+        for model_name, result in results.items():
+            col1, col2 = st.columns([3, 1])
+            with col1:
+                st.markdown(f"**{model_name}**")
+                metrics_text = ", ".join([f"{k}: {v:.4f}" for k, v in result['metrics'].items()])
+                st.write(f"Métriques: {metrics_text}")
+            
+            with col2:
+                model_buffer = BytesIO()
+                joblib.dump(result['model'], model_buffer)
+                model_buffer.seek(0)
+                st.download_button(
+                    label='📥 Télécharger',
+                    data=model_buffer,
+                    file_name=f'{model_name.replace(" ", "_").lower()}_trained_model.joblib',
+                    mime='application/octet-stream',
+                    key=f"download_{model_name}"  # Clé unique pour chaque bouton
+                )
+        
+        # Ajout d'un bouton pour télécharger tous les modèles dans un fichier zip (optionnel)
+        if st.button("Préparer le téléchargement de tous les modèles (ZIP)"):
+            import zipfile
+            zip_buffer = BytesIO()
+            with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+                for model_name, result in results.items():
+                    model_bytes = BytesIO()
+                    joblib.dump(result['model'], model_bytes)
+                    model_bytes.seek(0)
+                    zip_file.writestr(
+                        f'{model_name.replace(" ", "_").lower()}_trained_model.joblib',
+                        model_bytes.getvalue()
+                    )
+            
+            zip_buffer.seek(0)
+            st.download_button(
+                label="📥 Télécharger tous les modèles (ZIP)",
+                data=zip_buffer,
+                file_name="all_trained_models.zip",
+                mime="application/zip"
+            )
+        
+        # Documentation pour l'utilisateur
+        st.markdown("### Comment utiliser les modèles téléchargés")
+        st.markdown("""
+        Les modèles sont exportés au format `.joblib`. Pour les utiliser dans une autre application Python :
+        
+        ```python
+        import joblib
+        
+        # Charger le modèle
+        model = joblib.load('chemin_vers_votre_modele.joblib')
+        
+        # Utiliser le modèle pour faire des prédictions
+        predictions = model.predict(X_new)
+        ```
+        
+        Assurez-vous d'avoir les mêmes bibliothèques installées que celles utilisées pour l'entraînement.
+        """)

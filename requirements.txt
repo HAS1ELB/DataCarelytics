@@ -28,3 +28,4 @@ langchain-groq
 datetime
 tf-nightly-cpu==2.20.0.dev20250516
 tf-keras
+sentence-transformers

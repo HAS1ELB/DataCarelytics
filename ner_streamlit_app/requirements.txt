@@ -1,0 +1,7 @@
+streamlit
+spacy
+joblib
+sklearn-crfsuite
+scikit-learn
+fpdf
+nltk

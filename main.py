@@ -5,7 +5,7 @@ from tabular_data.utils import display_home_page
 from tabular_data.ml_models import handle_machine_learning
 from medical_chatbot.app import main as image_chatbot_main
 from medical_chatbot2.main import main as text_chatbot_main
-from medical_report_analysis.app import main as medical_report_main
+from ner_streamlit_app.app import main as medical_report_main
 from trt_image.main import main as trt_image_main
 
 # Configure page
@@ -48,7 +48,7 @@ try:
     with st.sidebar:
         selected = option_menu(
             "Navigation",
-            ["Home", "Tabular Data Analysis", "Image Processing", "Text Analysis", "Chatbot", "Medical Report Analysis"],
+            ["Home", "Tabular Data Analysis", "Image Processing", "Text Analysis", "Chatbot"],
             icons=['house', 'table', 'image', 'chat-square-text', 'diagram-3', 'file-text'],
             menu_icon="app-indicator",
             default_index=0,
@@ -58,7 +58,7 @@ except:
     st.sidebar.title("Navigation")
     app_mode = st.sidebar.selectbox(
         "Choose a category",
-        ["Home", "Tabular Data Analysis", "Image Processing", "Text Analysis", "Chatbot", "Medical Report Analysis"]
+        ["Home", "Tabular Data Analysis", "Image Processing", "Text Analysis", "Chatbot"]
     )
 
 # Route to appropriate page
@@ -84,7 +84,7 @@ elif app_mode == "Image Processing":
     trt_image_main()
 elif app_mode == "Text Analysis":
     st.markdown("<h2 class='sub-header'>Text Analysis</h2>", unsafe_allow_html=True)
-    st.info("Text Analysis module coming soon!")
+    medical_report_main()
 elif app_mode == "Chatbot":
     st.markdown("<h2 class='sub-header'>Medical Chatbots</h2>", unsafe_allow_html=True)
     chatbot_type = st.selectbox(

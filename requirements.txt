@@ -30,3 +30,4 @@ tf-nightly-cpu==2.20.0.dev20250516
 tf-keras
 sentence-transformers
 protobuf>=4.21.6
+faiss-cpu

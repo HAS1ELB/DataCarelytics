@@ -26,4 +26,4 @@ langchain
 langchain-core
 langchain-groq
 datetime
-tensorflow
+tf-nightly-cpu

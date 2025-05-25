@@ -18,7 +18,7 @@ def display_consent_popup():
                 <div class='category-box'>
                     <h3>Consentement pour le traitement des données</h3>
                     <p>Nous traitons des données médicales sensibles pour fournir des analyses. Ces données peuvent inclure des datasets, images médicales, ou rapports textuels.</p>
-                    <p>En continuant, vous consentez au traitement de ces données conformément à notre <a href='politique_confidentialite.pdf'>politique de confidentialité</a>.</p>
+                    <p>En continuant, vous consentez au traitement de ces données conformément à notre <a href='https://github.com/HAS1ELB/DataCarelytics/blob/main/politique_confidentialite.md'>politique de confidentialité</a>.</p>
                 </div>
             """, unsafe_allow_html=True)
             consent = st.checkbox("J'accepte le traitement de mes données personnelles.")

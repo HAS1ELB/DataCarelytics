@@ -1,6 +1,6 @@
 # Politique de Confidentialité - DataCarelytics
 
-**Responsable du traitement** : [Nom de l'organisation]
+**Responsable du traitement** : DataCare
 **Finalités** : Analyse de données médicales pour la recherche et le diagnostic.
 **Données collectées** : Datasets tabulaires, images médicales, rapports textuels.
 **Destinataires** : API Groq (sous-traitant pour l'IA).

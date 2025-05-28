@@ -1,20 +1,27 @@
+https://has1elb-medicalanalysisapp-main-xojuse.streamlit.app/
 
 # DataCarelytics
 
 ## Overview
 
-DataCarelytics is a comprehensive medical data science platform built to analyze and process medical datasets, including tabular data, medical images, and clinical text. Leveraging advanced machine learning, deep learning, and natural language processing (NLP) techniques, it provides tools for clinical prediction, image classification, and text mining. The platform is designed with a focus on usability, security, and advanced analytics, making it suitable for researchers, clinicians, and data scientists working with sensitive medical data.
+DataCarelytics is a comprehensive medical data science platform designed to analyze and process medical datasets, including tabular data, medical images, and clinical text. Leveraging advanced machine learning, deep learning, and natural language processing (NLP) techniques, it provides tools for clinical prediction, image classification, and text mining. The platform is tailored for researchers, clinicians, and data scientists, emphasizing usability, security, and advanced analytics for sensitive medical data.
 
 ### Key Features
 
-* **Tabular Data Analysis** : Perform advanced preprocessing, feature engineering, and machine learning with support for algorithms like XGBoost, LightGBM, and CatBoost.
+* **Tabular Data Analysis** : Advanced preprocessing, feature engineering, and machine learning with algorithms like XGBoost, LightGBM, and CatBoost.
 * **Medical Image Processing** : Analyze MRI and X-ray images using pre-trained deep learning models for tumor classification and disease detection.
 * **Medical Text Analysis** : Extract structured information from clinical notes using Named Entity Recognition (NER) with CRF models.
-* **Chatbot Functionality** : Includes two chatbots:
+* **Chatbot Functionality** :
 * **Image-based Chatbot** : Analyzes medical images using Groq’s Llama 4 Scout model.
 * **Text-based RAG Chatbot** : Answers medical queries using a retrieval-augmented generation (RAG) system with FAISS vector storage.
-* **Interactive Visualizations** : Powered by Plotly for dynamic charts, heatmaps, and model performance metrics.
+* **Interactive Visualizations** : Dynamic charts, heatmaps, and model performance metrics powered by Plotly.
 * **Data Privacy** : Local processing with secure handling of sensitive medical data, as outlined in the [Privacy Policy](https://grok.com/chat/politique_confidentialite.md).
+
+## Deployment
+
+The DataCarelytics application is live and accessible at:
+[**https://has1elb-medicalanalysisapp-main-xojuse.streamlit.app/**](https://has1elb-medicalanalysisapp-main-xojuse.streamlit.app/)
+Visit the URL to interact with the platform directly in your browser.
 
 ## Project Structure
 
@@ -102,19 +109,22 @@ has1elb-datacarelytics/
   python medical_chatbot2/create_vectorstore.py
   ```
 
-1. **Run the Application** :
+1. **Run the Application Locally** :
 
 ```bash
    streamlit run main.py
 ```
 
-   The application will open in your default web browser.
+   The application will open in your default web browser. Alternatively, access the deployed version at [https://has1elb-medicalanalysisapp-main-xojuse.streamlit.app/](https://has1elb-medicalanalysisapp-main-xojuse.streamlit.app/).
 
 ## Usage
 
-1. **Launch the Application** :
-   After running `streamlit run main.py`, a consent popup will appear due to the handling of sensitive medical data. Check the consent box to proceed, agreeing to the [Privacy Policy](https://grok.com/chat/politique_confidentialite.md).
-2. **Navigate Modules** :
+1. **Access the Application** :
+
+* **Deployed Version** : Visit [https://has1elb-medicalanalysisapp-main-xojuse.streamlit.app/](https://has1elb-medicalanalysisapp-main-xojuse.streamlit.app/).
+* **Local Version** : Run `streamlit run main.py`. A consent popup will appear due to the handling of sensitive medical data. Check the consent box to proceed, agreeing to the [Privacy Policy](https://grok.com/chat/politique_confidentialite.md).
+
+1. **Navigate Modules** :
    Use the sidebar to select a module:
 
 * **Home** : Overview of features and example applications.
@@ -122,8 +132,8 @@ has1elb-datacarelytics/
 * **Image Processing** : Analyze MRI or X-ray images using pre-trained deep learning models.
 * **Text Analysis** : Extract entities from clinical text and generate structured PDF reports.
 * **Chatbot** : Choose between:
-  *  **Image-based Chatbot** : Upload medical images and ask questions, powered by Groq’s Llama 4 Scout.
-  *  **Text-based RAG Chatbot** : Query medical knowledge from PDF documents using a FAISS vector store.
+  * **Image-based Chatbot** : Upload medical images and ask questions, powered by Groq’s Llama 4 Scout.
+  * **Text-based RAG Chatbot** : Query medical knowledge from PDF documents using a FAISS vector store.
 
 1. **Export Results** :
 
@@ -142,14 +152,14 @@ has1elb-datacarelytics/
 * Model evaluation with metrics (accuracy, precision, RMSE, etc.).
 * SHAP-based model interpretability.
 * Cross-validation and learning curves.
-* **Usage** : Select "Tabular Data Analysis" in the sidebar, upload a dataset or use a sample, preprocess, and train models under the "Machine Learning" section.
+* **Usage** : Select "Tabular Data Analysis" in the sidebar, upload a dataset or use a sample, then preprocess and train models under the appropriate sections.
 
 ### 2. Image Processing
 
-* **Functionality** : Analyze MRI or X-ray images using pre-trained TensorFlow models for tumor classification or pneumonia detection.
+* **Functionality** : Analyze MRI and X-ray images using pre-trained TensorFlow models for tumor classification or pneumonia detection.
 * **Models** :
 * `advanced_tumor_classification_model.h5`: Classifies MRI images into glioma, meningioma, no tumor, or pituitary tumor.
-* `chest_xray_model.h5`: Detects pneumonia in X-ray images (binary classification).
+* `chest_xray_model.h5`: Classifies X-ray images as normal or pneumonia (binary classification).
 * **Usage** : Select "Image Processing," choose analysis type (MRI or X-ray), upload an image, and view predictions with confidence scores.
 
 ### 3. Medical Text Analysis
@@ -180,7 +190,7 @@ See `requirements.txt` for a complete list of Python packages. Key dependencies 
 
 ## Data Privacy
 
-* **Local Processing** : All data processing occurs locally to ensure privacy.
+* **Local Processing** : All data processing occurs locally to ensure privacy (except for API calls to Groq for chatbots).
 * **Sensitive Data** : Medical datasets, images, and text are handled securely, with data deleted at the end of the user session.
 * **Consent** : Users must consent to data processing as per the [Privacy Policy](https://grok.com/chat/politique_confidentialite.md).
 * **API Usage** : The Groq API is used for chatbot functionalities, with secure API key management via environment variables.
@@ -210,4 +220,4 @@ This project is licensed under the MIT License. See the [LICENSE](https://grok.c
 
 ## Contact
 
-For issues, questions, or to exercise data privacy rights (access, rectification, deletion), contact [email placeholder]. For API-related queries, visit [xAI API](https://x.ai/api).
+For issues, questions, or to exercise data privacy rights (access, rectification, deletion), contact  **[elbahraouihassan54@gmail.com](mailto:elbahraouihassan54@gmail.com)** . For API-related queries, visit [xAI API](https://x.ai/api).
